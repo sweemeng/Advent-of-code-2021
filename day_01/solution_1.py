@@ -1,6 +1,6 @@
 def main():
   larger_count = 0
-  with open("day_one/input.txt") as f:
+  with open("day_01/input.txt") as f:
     prev = None
     for i in f:
       if prev:

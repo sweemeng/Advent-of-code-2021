@@ -1,4 +1,4 @@
-from day_three import utils
+from day_03 import utils
 
 
 def solution(path):

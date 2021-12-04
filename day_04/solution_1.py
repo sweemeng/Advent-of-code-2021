@@ -1,4 +1,4 @@
-from day_four import utils
+from day_04 import utils
 
 def solution(path: str):
   game_input, boards = utils.parse(path)
