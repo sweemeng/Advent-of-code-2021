@@ -6,9 +6,11 @@ import day_03.solution_1 as day_31
 import day_03.solution_2 as day_32
 import day_04.solution_1 as day_41
 import day_04.solution_2 as day_42
+import day_05.solution_1 as day_51
+import day_05.solution_2 as day_52
 
 def main():
-  day = 4
+  day = 5
   solution = 2
   if day == 1 and solution == 1:
     day_11.main()
@@ -26,6 +28,10 @@ def main():
     day_41.solution("day_04/input.txt")
   if day == 4 and solution == 2:
     day_42.solution("day_04/input.txt")
+  if day == 5 and solution == 1:
+    day_51.solution("day_05/input.txt")
+  if day == 5 and solution == 2:
+    day_52.solution("day_05/input.txt")
 
 if __name__ == "__main__":
   main()
