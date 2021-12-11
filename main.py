@@ -1,17 +1,16 @@
-import day_01.solution_1 as day_11
-import day_01.solution_2 as day_12
-import day_02.solution_1 as day_21
-import day_02.solution_2 as day_22
-import day_03.solution_1 as day_31
-import day_03.solution_2 as day_32
-import day_04.solution_1 as day_41
-import day_04.solution_2 as day_42
-import day_05.solution_1 as day_51
-import day_05.solution_2 as day_52
+from solutions import *
 
 def main():
-  day = 5
+  day = 11
   solution = 2
+  test_mode = False
+  day_path = "day_11"
+  
+  if test_mode:
+    file_name = "test"
+  else:
+    file_name = "input"
+  path = f"{day_path}/{file_name}.txt"
   if day == 1 and solution == 1:
     day_11.main()
   if day == 1 and solution == 2:
@@ -21,17 +20,41 @@ def main():
   if day ==  2 and solution == 2:
     day_22.main()
   if day == 3 and solution == 1:
-    day_31.solution("day_03/input.txt")
+    day_31.solution(path)
   if day == 3 and solution == 2:
-    day_32.solution("day_03/input.txt")
+    day_32.solution(path)
   if day == 4 and solution == 1:
-    day_41.solution("day_04/input.txt")
+    day_41.solution(path)
   if day == 4 and solution == 2:
-    day_42.solution("day_04/input.txt")
+    day_42.solution(path)
   if day == 5 and solution == 1:
-    day_51.solution("day_05/input.txt")
+    day_51.solution(path)
   if day == 5 and solution == 2:
-    day_52.solution("day_05/input.txt")
+    day_52.solution(path)
+  if day == 6 and solution == 1:
+    day_61.solution(path)
+  if day == 6 and solution == 2:
+    day_62.solution(path)
+  if day == 7 and solution == 1:
+    day_71.solution(path)
+  if day == 7 and solution == 2:
+    day_72.solution(path)
+  if day == 8 and solution == 1:
+    day_81.solution(path)
+  if day == 8 and solution == 2:
+    day_82.solution(path)
+  if day == 9 and solution == 1:
+    day_91.solution(path)
+  if day == 9 and solution == 2:
+    day_92.solution(path)
+  if day == 10 and solution == 1:
+    day_101.solution(path)
+  if day == 10 and solution == 2:
+    day_102.solution(path)
+  if day == 11 and solution == 1:
+    day_111.solution(path)
+  if day == 11 and solution == 2:
+    day_112.solution(path)
 
 if __name__ == "__main__":
   main()
