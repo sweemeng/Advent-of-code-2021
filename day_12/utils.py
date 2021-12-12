@@ -38,12 +38,11 @@ class PathMaps:
   def walk(self, node="start", small_visit_time=1):
     
     s = set()
-    trie = {}
     stack = []
     stack.append(node)
     # i can use tuple, whatevs. if not set exist, i use a dict as a trie
-    s.add(str(stack))
-    
+    s.add(tuple(stack))
+    count = 0
     while True:
       check = node
       node = None
@@ -55,20 +54,20 @@ class PathMaps:
         if invalid:
           continue
         stack.append(option)
-        if str(stack) in s:
+        if tuple(stack) in s:
+          # we seen this before
           stack.pop()
           continue
         node = option
-        s.add(str(stack))
-        trie[str(stack)] = False
+        s.add(tuple(stack))
         break
       if not node:
         stack.pop()
         if stack:
           node = stack[-1]
       if node == 'end':
-        s.add(str(stack))
-        trie[str(stack)] = True
+        count += 1
+        s.add(tuple(stack))
         stack.pop()
         if stack:
           node = stack[-1]
@@ -76,7 +75,7 @@ class PathMaps:
       if not stack:
         # happen when we pop start, so please put this at the end
         break  
-    print(len([trie[key] for key in trie if trie[key]])) 
+    print(count)
   
   def cant_insert_two_visit(self, stack, node):
     if node not in self.small_cave:
