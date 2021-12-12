@@ -1,10 +1,10 @@
 from solutions import *
 
 def main():
-  day = 11
+  day = 12
   solution = 2
   test_mode = False
-  day_path = "day_11"
+  day_path = "day_12"
   
   if test_mode:
     file_name = "test"
@@ -55,6 +55,10 @@ def main():
     day_111.solution(path)
   if day == 11 and solution == 2:
     day_112.solution(path)
+  if day == 12 and solution == 1:
+    day_121.solution(path)
+  if day == 12 and solution == 2:
+    day_122.solution(path)
 
 if __name__ == "__main__":
   main()

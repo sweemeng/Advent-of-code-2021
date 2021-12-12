@@ -20,4 +20,6 @@ import day_10.solution_1 as day_101
 import day_10.solution_2 as day_102
 import day_11.solution_1 as day_111
 import day_11.solution_2 as day_112
+import day_12.solution_1 as day_121
+import day_12.solution_2 as day_122
 
