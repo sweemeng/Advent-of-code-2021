@@ -1,6 +1,7 @@
 from typing import List, Dict, Tuple
 import copy
 from collections import Counter
+from functools import lru_cache
 
 
 class PathMaps:
@@ -39,9 +40,9 @@ class PathMaps:
     
     s = set()
     stack = []
-    stack.append(node)
+    stack.insert(0, node)
     # i can use tuple, whatevs. if not set exist, i use a dict as a trie
-    s.add(tuple(stack))
+    s.add(str(stack))
     count = 0
     while True:
       check = node
@@ -53,24 +54,24 @@ class PathMaps:
           invalid = self.cant_insert_simple(stack, option)
         if invalid:
           continue
-        stack.append(option)
-        if tuple(stack) in s:
+        stack.insert(0, option)
+        if str(stack) in s:
           # we seen this before
-          stack.pop()
+          stack.pop(0)
           continue
         node = option
-        s.add(tuple(stack))
+        s.add(str(stack))
         break
       if not node:
-        stack.pop()
+        stack.pop(0)
         if stack:
-          node = stack[-1]
+          node = stack[0]
       if node == 'end':
         count += 1
-        s.add(tuple(stack))
-        stack.pop()
+        s.add(str(stack))
+        stack.pop(0)
         if stack:
-          node = stack[-1]
+          node = stack[0]
         
 
       if not stack:
@@ -88,6 +89,7 @@ class PathMaps:
       if key in self.small_cave:
           if c[key] >= 2:
             visited_twice = key
+            break
     
     if visited_twice:
       if node in stack:
