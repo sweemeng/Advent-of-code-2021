@@ -71,6 +71,7 @@ class PathMaps:
         stack.pop()
         if stack:
           node = stack[-1]
+        
 
       if not stack:
         # happen when we pop start, so please put this at the end
