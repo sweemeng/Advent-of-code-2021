@@ -22,4 +22,10 @@ import day_11.solution_1 as day_111
 import day_11.solution_2 as day_112
 import day_12.solution_1 as day_121
 import day_12.solution_2 as day_122
-
+import day_13.solution_1 as day_131
+import day_13.solution_2 as day_132
+import day_14.solution_1 as day_141
+import day_14.solution_2 as day_142
+import day_15.solution_1 as day_151
+import day_15.solution_2 as day_152
+import day_16.solution_1 as day_161
